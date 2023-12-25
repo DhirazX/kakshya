@@ -8,10 +8,10 @@ const API_ENDPOINTS = {
     tokenRefresh: '/token/refresh/',
     createClass: '/class/create/',
     viewClassList: '/class/list/',
-    deleteClass: '/class/delete/<int:class_id>/',
+    deleteClass: '/class/delete/',//need to pass id here
     createClassRecord: '/class-record/create/',
     viewClassRecordList: '/class-record/list/',
-    viewClassRecord: '/class-record/<int:class_id>/',
-    updateClassRecord: '/class-record/update/<int:class_id>/',
-    deleteClassRecord: '/class-record/delete/<int:class_id>/',
+    viewClassRecord: '/class-record/', //need to pass id here
+    updateClassRecord: '/class-record/update/', //need to pass id here
+    deleteClassRecord: '/class-record/delete/', //need to pass id here
 };

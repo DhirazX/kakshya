@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
     <script src="login.js" defer></script>
+    <script src="backend_api/login.js"></script>
+
     <title>Kakshya</title>
   </head>
   <body>
@@ -27,10 +29,16 @@
           <div class="login-text">Login</div>
 
           <div class="form-wrapper">
-            <form method="POST" action="l#">
+            <form method="POST" action="#" id="loginForm">
               <div class="input-wrapper">
-                <input type="text" placeholder="Username" class="input-field" />
                 <input
+                  type="text"
+                  id="email"
+                  placeholder="Username"
+                  class="input-field"
+                />
+                <input
+                  id="password"
                   type="password"
                   placeholder="Password"
                   class="input-field"
