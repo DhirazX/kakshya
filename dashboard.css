@@ -55,48 +55,51 @@ body {
 .create-btn {
   margin-top: 30px;
   width: 15vw;
-  background-color: var(--theme-color);
-  color: var(--main-bg);
+  color: var(--theme-color);
+  border: 5px solid var(--theme-color);
   padding: 40px 50px;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  transition: 0.3s all;
+  transition: 0.2s all;
   cursor: pointer;
 }
 .create-btn:hover {
   transform: scale(0.95);
-  background-color: var(--theme-color-hover);
+  background-color: var(--theme-color);
+  color: var(--main-bg);
 }
-.create-icon,
 .create-text {
   font-weight: 600;
   font-size: 20px;
 }
 .create-icon {
+  font-weight: 600;
   font-size: 50px;
 }
 
 /* modal */
-.createmodal {
+.create-modal {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 80vh;
-  width: 60vw;
+  /* height: 80vh; */
+  /* width: 60vw; */
   background-color: var(--main-bg);
   color: var(--main-text-color);
   border: none;
+  border-radius: 3px;
   outline: none;
-  padding: 2%;
+  padding: 8% 12%;
   transition: 0.3s all;
 }
-.createmodal::backdrop {
+.create-modal::backdrop,
+.delete-modal::backdrop {
   background-color: rgba(0, 0, 0, 0.505);
 }
-.createmodal[open] {
+.create-modal[open] {
   animation: fadein 0.2s ease-out forwards;
 }
 @keyframes fadein {
@@ -127,7 +130,7 @@ body {
   outline: none;
   border-radius: 50%;
   box-shadow: 0 0 0 30px #ff0000;
-  margin-top: 50px;
+  margin-top: 70px;
   cursor: pointer;
   transition: 0.3s all;
 }
@@ -189,6 +192,45 @@ body {
   margin-left: 10px;
   transition: 0.3s all;
   cursor: pointer;
+}
+.delete-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
+  outline: none;
+  border: none;
+  padding: 30px;
+  border-radius: 3px;
+}
+.delete-modal[open] {
+  animation: fadein 0.2s ease-out forwards;
+}
+.delete-btns-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 20px 0;
+}
+.cancel-delete,
+.delete-final {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.cancel-delete:hover,
+.delete-final:hover {
+  transform: scale(0.96);
+}
+.delete-final {
+  margin-left: 10px;
+  background-color: red;
+  color: var(--main-text-color);
 }
 .edit-btn {
   transition: 0.3s all;

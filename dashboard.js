@@ -13,7 +13,7 @@ records.forEach((record, index) => {
 //for Create modal
 const openModal = document.querySelector(".create-btn");
 const closeModal = document.querySelector(".close-modal");
-const modal = document.querySelector(".createmodal");
+const modal = document.querySelector(".create-modal");
 
 openModal.addEventListener("click", () => {
   modal.showModal();
@@ -24,7 +24,6 @@ closeModal.addEventListener("click", () => {
 
 //Recorder
 const recordBtn = document.querySelector(".record-btn");
-
 recordBtn.addEventListener("click", () => {
   if (recordBtn.innerText == "Start") {
     recordBtn.innerText = "Stop";
@@ -33,7 +32,23 @@ recordBtn.addEventListener("click", () => {
   }
 });
 
-// //Record Info Dropdown
+// Delete Modal
+const deletebtns = document.querySelectorAll(".delete-btn");
+const cancelDeletebtns = document.querySelectorAll(".cancel-delete");
+const deletemodal = document.querySelector(".delete-modal");
+
+deletebtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    deletemodal.showModal();
+  });
+});
+cancelDeletebtns.forEach((cancelbtn) => {
+  cancelbtn.addEventListener("click", () => {
+    deletemodal.close();
+  });
+});
+
+// Record Info Dropdown
 const recordInfo = document.querySelectorAll(".record-info");
 const dropdownBtn = document.querySelectorAll(".dropdown-btn");
 const recordTitle = document.querySelectorAll(".record-title");
