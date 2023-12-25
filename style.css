@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+:root {
+  --main-bg: #1a1a1a;
+  --main-text-color: white;
+}
+.container {
+  height: 100vh;
+  display: flex;
+}
+.image-section {
+  width: 50%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/login-image.jpg);
+  background-position: center;
+  background-size: cover;
+  color: var(--main-text-color);
+}
+.heading-text {
+  font-size: 70px;
+  font-weight: 600;
+}
+.sub-text{
+    font-size: 20px;
+    margin-top: -20px;
+}
+.login-section {
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
