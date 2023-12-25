@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 0.3s all;
+  transition: .3s all ease-out;
 }
 .login-wrap {
   width: 60%;

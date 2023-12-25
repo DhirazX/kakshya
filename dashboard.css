@@ -52,7 +52,13 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
-.create-btn {
+.hero-btns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.create-btn,
+.upload-btn {
   margin-top: 30px;
   width: 15vw;
   color: var(--theme-color);
@@ -65,23 +71,29 @@ body {
   justify-content: center;
   transition: 0.2s all;
   cursor: pointer;
+  margin-right: 3%;
 }
-.create-btn:hover {
+.create-btn:hover,
+.upload-btn:hover {
   transform: scale(0.95);
   background-color: var(--theme-color);
   color: var(--main-bg);
 }
-.create-text {
+.record-text,
+.upload-text {
   font-weight: 600;
   font-size: 20px;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
-.create-icon {
+.record-icon,
+.upload-icon {
   font-weight: 600;
   font-size: 50px;
 }
 
 /* modal */
-.create-modal {
+.record-modal {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -95,11 +107,11 @@ body {
   padding: 8% 12%;
   transition: 0.3s all;
 }
-.create-modal::backdrop,
+.record-modal::backdrop,
 .delete-modal::backdrop {
   background-color: rgba(0, 0, 0, 0.505);
 }
-.create-modal[open] {
+.record-modal[open] {
   animation: fadein 0.2s ease-out forwards;
 }
 @keyframes fadein {
@@ -130,7 +142,7 @@ body {
   outline: none;
   border-radius: 50%;
   box-shadow: 0 0 0 30px #ff0000;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   cursor: pointer;
   transition: 0.3s all;
 }

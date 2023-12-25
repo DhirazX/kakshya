@@ -13,7 +13,7 @@ records.forEach((record, index) => {
 //for Create modal
 const openModal = document.querySelector(".create-btn");
 const closeModal = document.querySelector(".close-modal");
-const modal = document.querySelector(".create-modal");
+const modal = document.querySelector(".record-modal");
 
 openModal.addEventListener("click", () => {
   modal.showModal();
