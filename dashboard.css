@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
 }
 :root {
   --main-bg: #151515;
@@ -12,6 +11,21 @@
   --theme-color: #cca061;
   --theme-color-hover: #9d7a4a;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--main-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light-bg);
+  border-radius: 10px;
+    border: 0.5px solid rgba(255, 255, 255, 0.146);
+}
+body {
+  background-color: var(--main-bg);
+}
+
 .container {
   min-height: 100vh;
   background-color: var(--main-bg);
@@ -52,6 +66,8 @@
 .section-title {
   margin: 40px 0 20px 0;
   font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .record {
   width: 100%;
@@ -83,4 +99,14 @@
 .delete-btn:hover,
 .edit-btn:hover {
   transform: scale(0.9);
+}
+
+/* for animations */
+.hide-section {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.show-section {
+  opacity: 1;
+  transform: translate(0);
 }
