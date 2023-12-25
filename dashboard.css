@@ -31,7 +31,7 @@ body {
 .container {
   min-height: 100vh;
   background-color: var(--main-bg);
-  padding: 2% 5%;
+  padding: 3% 5%;
   color: var(--main-text-color);
 }
 .nav {
@@ -60,7 +60,6 @@ body {
 .create-btn,
 .add-btn {
   margin-top: 30px;
-  width: 15vw;
   color: var(--theme-color);
   border: 5px solid var(--theme-color);
   padding: 40px 50px;
@@ -141,7 +140,7 @@ body {
 .record-modal::backdrop,
 .delete-modal::backdrop,
 .upload-modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.505);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .record-modal[open] {
   animation: fadein 0.2s ease-out forwards;
@@ -281,6 +280,7 @@ body {
   color: var(--main-text-color);
 }
 .edit-btn {
+  margin-left: 10px;
   transition: 0.3s all;
   cursor: pointer;
 }
@@ -324,4 +324,67 @@ body {
 }
 .bigger-font {
   font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .create-btn,
+  .add-btn {
+    padding: 30px 40px;
+    border: 3px solid var(--theme-color);
+  }
+  .record-title {
+    font-size: 16px;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .upload-btn {
+    margin-left: 10px;
+  }
+  .container {
+    padding: 5% 5%;
+  }
+  .add-btn {
+    margin-left: 10px;
+  }
+  .edit-btn,
+  .delete-btn,
+  .dropdown-btn {
+    font-size: 14px;
+  }
+  .record-text,
+  .add-text {
+    font-size: 16px;
+  }
+  .record-icon,
+  .add-icon {
+    font-size: 40px;
+  }
+  .section-title {
+    font-size: 18px;
+  }
+  .delete-text {
+    font-size: 14px;
+  }
+  .record-btn {
+    height: 60px;
+    width: 60px;
+    font-size: 14px;
+  }
+  .record-modal{
+    padding: 20% 20%;
+
+  }
+  .close-modal{
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .create-btn,
+  .add-btn {
+    padding: 20px 30px;
+  }
+  .record-title {
+    font-size: 14px;
+  }
 }
