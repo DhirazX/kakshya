@@ -8,6 +8,7 @@
 :root {
   --main-bg: #1a1a1a;
   --main-text-color: white;
+  --theme-color: #cca061;
 }
 .container {
   height: 100vh;
@@ -28,10 +29,12 @@
 .heading-text {
   font-size: 70px;
   font-weight: 600;
+  cursor: pointer;
 }
-.sub-text{
-    font-size: 20px;
-    margin-top: -20px;
+.sub-text {
+  font-size: 20px;
+  margin-top: -20px;
+  cursor: pointer;
 }
 .login-section {
   background-color: var(--main-bg);
@@ -40,4 +43,58 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.login-wrap {
+  width: 40%;
+}
+.login-text {
+  text-align: start;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--theme-color);
+  text-transform: uppercase;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.input-field {
+  margin-bottom: 15px;
+  background: none;
+  color: var(--main-text-color);
+  border: none;
+  border-bottom: 2px solid var(--theme-color);
+  font-size: 18px;
+  padding: 5px 0;
+}
+input:focus {
+  outline: none;
+}
+.signin-btn {
+  background: none;
+  background-color: var(--theme-color);
+  color: var(--main-bg);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.signin-btn:hover {
+  transform: scale(0.95);
+}
+.signup-text {
+  margin-top: 20px;
+}
+.signup-redirect {
+  color: var(--theme-color);
+  text-decoration: none;
+  margin-left: 10px;
 }
