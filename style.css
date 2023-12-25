@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 :root {
-  --main-bg: #1a1a1a;
+  --main-bg: #151515;
   --main-text-color: white;
   --theme-color: #cca061;
 }
@@ -46,7 +46,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 0.5s all;
+  transition: 0.3s all;
 }
 .login-wrap {
   width: 60%;
