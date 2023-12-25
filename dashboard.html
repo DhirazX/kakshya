@@ -10,11 +10,25 @@
       crossorigin="anonymous"
     ></script>
     <script src="dashboard.js" defer></script>
+    <script src="/backend/user.js"></script>
+    <script src = "/backend/endpoint.js"></script>
+
+
+    <script>
+      window.onload = function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          window.location.href = "login.html";
+        }
+      };
+    </script>
+
     <title>Kakshya</title>
   </head>
   <body>
     <div class="container">
       <div class="icon">Kakshya</div>
+      <button onClick="logoutUser(event)">Logout</button>
       <div class="create-btn">
         <i class="fa fa-regular fa-plus create-icon"></i>
         <span class="create-text">Create</span>
@@ -23,12 +37,69 @@
       <dialog class="modal">
         <div class="record-wrap">
           <div class="recorder-title">Record Audio</div>
-          <button class="record-btn" type="button">Start</button>
+          Enter the title =<input type="text" name="title"></input><br>
+          Select your class:
+          <select id="class-select">
+            <option value="">--Please choose an option--</option>
+            <option value="class1">Class 1</option>
+            <option value="class2">Class 2</option>
+            <option value="class3">Class 3</option>
+            <!-- Add more options as needed -->
+          </select>  
+                  <button class="record-btn" id="recordButton" type="button">
+            Start
+          </button>
+          <br /><br /><br />
+          <div id="timer">00:00</div>
+          <br /><br />
+          <button id="saveButton">Save</button>
         </div>
         <i class="fa-solid fa-xmark close-modal"></i>
       </dialog>
 
+      
+      <div class="">
+        <br><br>
+        <h2>Create a Class</h2>
+        <br><br>
+
+        <form id="createClassForm">
+          <div class="">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter title">
+          </div>
+          <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+          </div>
+          <br><br>
+      
+          <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+      
+      </div>
+<br><br>
+
+      <h1>List of classes = </h1>
+      <br>
+      <br>
+
+      <div id="classesList" >
+        <!-- Classes list will be populated here by the JavaScript -->
+    </div>
+
+    <br>
+    <br>
+
       <div class="section-title">Recordings</div>
+      <br><br>
+      <div id="recordingList" >
+        <!-- Classes list will be populated here by the JavaScript -->
+    </div>
+
+       
+
+<!--
       <div class="recordings">
         <div class="record hide-section">
           <div class="record-title">Machine Learning and Data Science</div>
@@ -66,6 +137,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> {% endcomment %} -->
+
+    <script src="/backend/audio.js"></script>
+
   </body>
 </html>
