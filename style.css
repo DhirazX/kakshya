@@ -91,7 +91,7 @@ input:focus {
   transform: scale(0.95);
 }
 .signup-text {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .signup-redirect {
   color: var(--theme-color);
