@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+:root {
+  --main-bg: #151515;
+  --light-bg: #ffffff10;
+  --main-text-color: white;
+  --theme-color: #cca061;
+  --theme-color-hover: #9d7a4a;
+}
+.container {
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  padding: 2% 5%;
+  color: var(--main-text-color);
+}
+.icon {
+  font-size: 40px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.create-btn {
+  margin-top: 30px;
+  width: 15vw;
+  background-color: var(--theme-color);
+  color: var(--main-bg);
+  padding: 40px 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.create-btn:hover {
+  transform: scale(0.95);
+  background-color: var(--theme-color-hover);
+}
+.create-icon,
+.create-text {
+  font-weight: 600;
+  font-size: 20px;
+}
+.create-icon {
+  font-size: 50px;
+}
+.section-title {
+  margin: 40px 0 20px 0;
+  font-size: 20px;
+}
+.record {
+  width: 100%;
+  background-color: var(--light-bg);
+  padding: 15px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s all;
+}
+.record:hover {
+  transform: scale(0.99);
+}
+.record-title {
+  flex: 1;
+}
+.delete-btn {
+  color: red;
+  margin-left: 10px;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.edit-btn {
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.delete-btn:hover,
+.edit-btn:hover {
+  transform: scale(0.9);
+}
