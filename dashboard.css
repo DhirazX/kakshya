@@ -11,6 +11,9 @@
   --theme-color: #cca061;
   --theme-color-hover: #9d7a4a;
 }
+.theme-color {
+  color: var(--theme-color);
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -31,9 +34,22 @@ body {
   padding: 2% 5%;
   color: var(--main-text-color);
 }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .icon {
   font-size: 40px;
   font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+.profile-section {
+  background-color: bisque;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
   cursor: pointer;
 }
 .create-btn {
@@ -64,7 +80,7 @@ body {
 }
 
 /* modal */
-.modal {
+.createmodal {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -75,8 +91,25 @@ body {
   border: none;
   outline: none;
   padding: 2%;
+  transition: 0.3s all;
 }
-.record-wrap {
+.createmodal::backdrop {
+  background-color: rgba(0, 0, 0, 0.505);
+}
+.createmodal[open] {
+  animation: fadein 0.2s ease-out forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.recorder-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,9 +135,7 @@ body {
   transform: scale(0.96);
   /* box-shadow: 0 0 0 30px #b40000; */
 }
-.modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.505);
-}
+
 .recorder-title {
   font-size: 25px;
   font-weight: 600;
@@ -127,6 +158,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
+  transition: 0.3s all;
 }
 .record {
   width: 100%;
@@ -135,15 +167,22 @@ body {
   margin-bottom: 20px;
   border-radius: 5px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: space-between;
   transition: 0.3s all;
 }
+.record-visible {
+  display: flex;
+  width: 100%;
+}
 .record:hover {
-  transform: scale(0.99);
+  transform: scale(0.993);
 }
 .record-title {
   flex: 1;
+  font-size: 18px;
+  transition: 0.2s all;
 }
 .delete-btn {
   color: red;
@@ -159,6 +198,23 @@ body {
 .edit-btn:hover {
   transform: scale(0.9);
 }
+.separator {
+  margin: 0 10px;
+  color: grey;
+}
+.dropdown-btn {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.record-info {
+  margin-top: 0;
+  transition: 0.5s all;
+  height: 0;
+  overflow: hidden;
+  /* display: none; */
+  /* animation: fade-in 1s; */
+}
 
 /* for animations */
 .hide-section {
@@ -168,4 +224,14 @@ body {
 .show-section {
   opacity: 1;
   transform: translate(0);
+}
+.show-record-info {
+  margin-top: 20px;
+  height: initial;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.bigger-font {
+  font-size: 30px;
 }

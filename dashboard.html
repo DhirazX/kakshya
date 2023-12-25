@@ -14,55 +14,157 @@
   </head>
   <body>
     <div class="container">
-      <div class="icon">Kakshya</div>
+      <div class="nav">
+        <div class="icon">Kakshya</div>
+        <div class="profile-section"></div>
+      </div>
+
       <div class="create-btn">
         <i class="fa fa-regular fa-plus create-icon"></i>
         <span class="create-text">Create</span>
       </div>
 
-      <dialog class="modal">
-        <div class="record-wrap">
+      <!-- Create Modal -->
+      <dialog class="createmodal">
+        <div class="recorder-wrap">
           <div class="recorder-title">Record Audio</div>
           <button class="record-btn" type="button">Start</button>
         </div>
         <i class="fa-solid fa-xmark close-modal"></i>
       </dialog>
 
+      <!-- Delete Modal -->
+      <dialog class="deletemodal">
+        <div class="delete-text">Are you sure you want to delete?</div>
+        <button type="btn" class="cancel-delete">Cancel</button>
+        <button type="btn" class="delete-final">Delete</button>
+      </dialog>
+
       <div class="section-title">Recordings</div>
       <div class="recordings">
         <div class="record hide-section">
-          <div class="record-title">Machine Learning and Data Science</div>
-          <div class="record-icons">
-            <i class="fa-regular fa-pen-to-square edit-btn"></i>
-            <i class="fa-regular fa-trash-can delete-btn"></i>
+          <div class="record-visible">
+            <div class="record-title">Physics</div>
+            <div class="record-icons">
+              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <i class="fa-regular fa-trash-can delete-btn"></i>
+              <span class="separator">|</span>
+              <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+            </div>
+          </div>
+          <div class="record-info hide-record-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            recusandae aliquam dicta minus assumenda sequi dolor eligendi veniam
+            mollitia pariatur odit facere quia iste ratione totam, neque maxime
+            illo. Architecto. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Vel esse quaerat modi tenetur quos alias nesciunt,
+            quasi velit laudantium consequatur sequi. Aspernatur itaque labore
+            deserunt quos doloribus, asperiores quibusdam quae!
+            <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint
+            delectus eos sequi rem qui. Similique incidunt dolorum ut, adipisci
+            doloribus tempora, ab itaque dolore officia perspiciatis
+            consequuntur, facere illum!
           </div>
         </div>
         <div class="record hide-section">
-          <div class="record-title">Algorithm and Neural Networks</div>
-          <div class="record-icons">
-            <i class="fa-regular fa-pen-to-square edit-btn"></i>
-            <i class="fa-regular fa-trash-can delete-btn"></i>
+          <div class="record-visible">
+            <div class="record-title">Algorithms and Neural Networks</div>
+            <div class="record-icons">
+              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <i class="fa-regular fa-trash-can delete-btn"></i>
+              <span class="separator">|</span>
+              <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+            </div>
+          </div>
+          <div class="record-info hide-record-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            recusandae aliquam dicta minus assumenda sequi dolor eligendi veniam
+            mollitia pariatur odit facere quia iste ratione totam, neque maxime
+            illo. Architecto. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Vel esse quaerat modi tenetur quos alias nesciunt,
+            quasi velit laudantium consequatur sequi. Aspernatur itaque labore
+            deserunt quos doloribus, asperiores quibusdam quae!
+            <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint
+            delectus eos sequi rem qui. Similique incidunt dolorum ut, adipisci
+            doloribus tempora, ab itaque dolore officia perspiciatis
+            consequuntur, facere illum!
           </div>
         </div>
         <div class="record hide-section">
-          <div class="record-title">Data Structure and Algorithms</div>
-          <div class="record-icons">
-            <i class="fa-regular fa-pen-to-square edit-btn"></i>
-            <i class="fa-regular fa-trash-can delete-btn"></i>
+          <div class="record-visible">
+            <div class="record-title">Simulation and Modelling</div>
+            <div class="record-icons">
+              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <i class="fa-regular fa-trash-can delete-btn"></i>
+              <span class="separator">|</span>
+              <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+            </div>
+          </div>
+          <div class="record-info hide-record-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            recusandae aliquam dicta minus assumenda sequi dolor eligendi veniam
+            mollitia pariatur odit facere quia iste ratione totam, neque maxime
+            illo. Architecto. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Vel esse quaerat modi tenetur quos alias nesciunt,
+            quasi velit laudantium consequatur sequi. Aspernatur itaque labore
+            deserunt quos doloribus, asperiores quibusdam quae!
+            <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint
+            delectus eos sequi rem qui. Similique incidunt dolorum ut, adipisci
+            doloribus tempora, ab itaque dolore officia perspiciatis
+            consequuntur, facere illum!
           </div>
         </div>
         <div class="record hide-section">
-          <div class="record-title">Simulation and Modelling</div>
-          <div class="record-icons">
-            <i class="fa-regular fa-pen-to-square edit-btn"></i>
-            <i class="fa-regular fa-trash-can delete-btn"></i>
+          <div class="record-visible">
+            <div class="record-title">Social Science and Politics</div>
+            <div class="record-icons">
+              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <i class="fa-regular fa-trash-can delete-btn"></i>
+              <span class="separator">|</span>
+              <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+            </div>
+          </div>
+          <div class="record-info hide-record-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            recusandae aliquam dicta minus assumenda sequi dolor eligendi veniam
+            mollitia pariatur odit facere quia iste ratione totam, neque maxime
+            illo. Architecto. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Vel esse quaerat modi tenetur quos alias nesciunt,
+            quasi velit laudantium consequatur sequi. Aspernatur itaque labore
+            deserunt quos doloribus, asperiores quibusdam quae!
+            <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint
+            delectus eos sequi rem qui. Similique incidunt dolorum ut, adipisci
+            doloribus tempora, ab itaque dolore officia perspiciatis
+            consequuntur, facere illum!
           </div>
         </div>
         <div class="record hide-section">
-          <div class="record-title">Logical Programming with SWI Prolog</div>
-          <div class="record-icons">
-            <i class="fa-regular fa-pen-to-square edit-btn"></i>
-            <i class="fa-regular fa-trash-can delete-btn"></i>
+          <div class="record-visible">
+            <div class="record-title">Machine Learning and Data Science</div>
+            <div class="record-icons">
+              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <i class="fa-regular fa-trash-can delete-btn"></i>
+              <span class="separator">|</span>
+              <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+            </div>
+          </div>
+          <div class="record-info hide-record-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            recusandae aliquam dicta minus assumenda sequi dolor eligendi veniam
+            mollitia pariatur odit facere quia iste ratione totam, neque maxime
+            illo. Architecto. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Vel esse quaerat modi tenetur quos alias nesciunt,
+            quasi velit laudantium consequatur sequi. Aspernatur itaque labore
+            deserunt quos doloribus, asperiores quibusdam quae!
+            <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint
+            delectus eos sequi rem qui. Similique incidunt dolorum ut, adipisci
+            doloribus tempora, ab itaque dolore officia perspiciatis
+            consequuntur, facere illum!
           </div>
         </div>
       </div>

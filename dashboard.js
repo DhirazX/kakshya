@@ -10,10 +10,10 @@ records.forEach((record, index) => {
   record.style.transitionDelay = 0.1 * index + "s";
 });
 
-//for modal
+//for Create modal
 const openModal = document.querySelector(".create-btn");
 const closeModal = document.querySelector(".close-modal");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".createmodal");
 
 openModal.addEventListener("click", () => {
   modal.showModal();
@@ -31,4 +31,18 @@ recordBtn.addEventListener("click", () => {
   } else {
     recordBtn.innerText = "Start";
   }
+});
+
+// //Record Info Dropdown
+const recordInfo = document.querySelectorAll(".record-info");
+const dropdownBtn = document.querySelectorAll(".dropdown-btn");
+const recordTitle = document.querySelectorAll(".record-title");
+
+dropdownBtn.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("rotate");
+    recordInfo[index].classList.toggle("show-record-info");
+    recordTitle[index].classList.toggle("theme-color");
+    recordTitle[index].classList.toggle("bigger-font");
+  });
 });

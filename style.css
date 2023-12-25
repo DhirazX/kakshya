@@ -68,7 +68,7 @@
   margin-bottom: 20px;
   font-size: 35px;
   font-weight: 600;
-  color: var(--theme-color);
+  /* color: var(--theme-color); */
   text-transform: uppercase;
 }
 .input-wrapper {
@@ -81,7 +81,8 @@
   background: none;
   color: var(--main-text-color);
   border: none;
-  border-bottom: 2px solid var(--theme-color);
+  /* border-bottom: 2px solid var(--theme-color); */
+  border-bottom: 2px solid grey;
   font-size: 18px;
   padding: 5px 0;
 }
@@ -103,7 +104,7 @@ input:focus {
   transition: 0.3s all;
 }
 .signin-btn:hover {
-  transform: scale(0.95);
+  transform: scale(0.97);
 }
 .signup-text {
   margin-top: 15px;
