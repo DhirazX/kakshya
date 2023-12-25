@@ -24,20 +24,27 @@
           <i class="fa-solid fa-microphone record-icon"></i>
           <span class="record-text">Record</span>
         </div>
-        <div class="upload-btn">
-          <i class="fa-solid fa-arrow-up-from-bracket upload-icon"></i>
-          <span class="upload-text">Upload</span>
+        <div class="add-btn">
+          <i class="fa-solid fa-arrow-up-from-bracket add-icon"></i>
+          <span class="add-text">Upload</span>
         </div>
       </div>
-      <!-- Create Modal -->
+      <!-- Record Modal -->
       <dialog class="record-modal">
         <div class="recorder-wrap">
-          <!-- <div class="recorder-title">Record Audio</div> -->
           <button class="record-btn" type="button">Start</button>
         </div>
         <i class="fa-solid fa-xmark close-modal"></i>
       </dialog>
 
+      <!-- Upload Modal -->
+      <dialog class="upload-modal">
+        <input type="file" class="upload-section" />
+        <div class="upload-btns-wrapper">
+          <button class="upload-cancel">Cancel</button>
+          <button class="upload-btn">Upload</button>
+        </div>
+      </dialog>
       <!-- Delete Modal -->
       <dialog class="delete-modal">
         <div class="delete-text">Are you sure you want to delete?</div>

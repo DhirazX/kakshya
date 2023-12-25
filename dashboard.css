@@ -58,7 +58,7 @@ body {
   align-items: center;
 }
 .create-btn,
-.upload-btn {
+.add-btn {
   margin-top: 30px;
   width: 15vw;
   color: var(--theme-color);
@@ -74,20 +74,20 @@ body {
   margin-right: 3%;
 }
 .create-btn:hover,
-.upload-btn:hover {
+.add-btn:hover {
   transform: scale(0.95);
   background-color: var(--theme-color);
   color: var(--main-bg);
 }
 .record-text,
-.upload-text {
+.add-text {
   font-weight: 600;
   font-size: 20px;
   margin-top: 10px;
   text-transform: uppercase;
 }
 .record-icon,
-.upload-icon {
+.add-icon {
   font-weight: 600;
   font-size: 50px;
 }
@@ -107,8 +107,40 @@ body {
   padding: 8% 12%;
   transition: 0.3s all;
 }
+.upload-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5%;
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
+  border: none;
+  outline: none;
+  flex-direction: column;
+}
+.upload-modal[open] {
+  animation: fadein 0.2s ease-out forwards;
+}
+.upload-section {
+  /* height: 20vh;
+  width: 20vw; */
+  border: 2px dashed grey;
+  display: flex;
+  flex-direction: column;
+}
+.upload-btns-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.upload-btn {
+  background-color: rgb(2, 210, 2);
+}
 .record-modal::backdrop,
-.delete-modal::backdrop {
+.delete-modal::backdrop,
+.upload-modal::backdrop {
   background-color: rgba(0, 0, 0, 0.505);
 }
 .record-modal[open] {
@@ -226,7 +258,9 @@ body {
   padding: 20px 0;
 }
 .cancel-delete,
-.delete-final {
+.delete-final,
+.upload-cancel,
+.upload-btn {
   padding: 5px 10px;
   border-radius: 3px;
   border: none;
@@ -236,7 +270,9 @@ body {
   cursor: pointer;
 }
 .cancel-delete:hover,
-.delete-final:hover {
+.delete-final:hover,
+.upload-cancel,
+.upload-btn {
   transform: scale(0.96);
 }
 .delete-final {

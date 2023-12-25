@@ -10,16 +10,28 @@ records.forEach((record, index) => {
   record.style.transitionDelay = 0.1 * index + "s";
 });
 
-//for Create modal
+//for Record modal
 const openModal = document.querySelector(".create-btn");
 const closeModal = document.querySelector(".close-modal");
-const modal = document.querySelector(".record-modal");
+const recordModal = document.querySelector(".record-modal");
 
 openModal.addEventListener("click", () => {
-  modal.showModal();
+  recordModal.showModal();
 });
 closeModal.addEventListener("click", () => {
-  modal.close();
+  recordModal.close();
+});
+
+//For Upload Modal
+const openUploadModal = document.querySelector(".add-btn");
+const closeUploadModal = document.querySelector(".upload-cancel");
+const uploadModal = document.querySelector(".upload-modal");
+
+openUploadModal.addEventListener("click", () => {
+  uploadModal.showModal();
+});
+closeUploadModal.addEventListener("click", () => {
+  uploadModal.close();
 });
 
 //Recorder
@@ -35,16 +47,16 @@ recordBtn.addEventListener("click", () => {
 // Delete Modal
 const deletebtns = document.querySelectorAll(".delete-btn");
 const cancelDeletebtns = document.querySelectorAll(".cancel-delete");
-const deletemodal = document.querySelector(".delete-modal");
+const deleteModal = document.querySelector(".delete-modal");
 
 deletebtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    deletemodal.showModal();
+    deleteModal.showModal();
   });
 });
 cancelDeletebtns.forEach((cancelbtn) => {
   cancelbtn.addEventListener("click", () => {
-    deletemodal.close();
+    deleteModal.close();
   });
 });
 
