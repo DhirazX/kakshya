@@ -11,6 +11,7 @@
     ></script>
     <script src="/backend/user.js"></script>
     <script src="/backend/endpoint.js"></script>
+    <script src="dashboard.js" defer></script>
 
     <script>
       window.onload = function () {
@@ -50,11 +51,8 @@
         </div>
       </div>
 
-      <div class="">
-        <br /><br />
+      <!-- <div class="">
         <h2>Create a Class</h2>
-        <br /><br />
-
         <form id="createClassForm">
           <div class="">
             <label for="title">Title</label>
@@ -74,24 +72,47 @@
               placeholder="Enter description"
             ></textarea>
           </div>
-          <br /><br />
 
           <button type="submit" class="btn btn-primary">Create</button>
         </form>
+      </div> -->
+
+      <div class="create-class">
+        <div class="create-class-title">Create a Class</div>
+        <form id="createClassForm">
+          <div class="create-class-title-wrapper">
+            <label for="title" class="create-class-subtitle">Title</label>
+            <input
+              type="text"
+              class="form-control text-input"
+              id="title"
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="form-group">
+            <div class="create-class-description-wrapper">
+              <div class="create-class-description-wrapper-second">
+                <label for="description" class="create-class-subtitle"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control text-input text-input-textarea"
+                  id="description"
+                  rows="2"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+            </div>
+            <button type="submit" class="create-class-btn">Create</button>
+          </div>
+        </form>
       </div>
-      <br /><br />
 
       <div class="section-title">Classes</div>
 
       <div id="classesList">
         <!-- Classes list will be populated here by the JavaScript -->
       </div>
-      <!-- <div class="class-wrapper">
-        <div class="class">
-          <div class="class-title">AI</div>
-          <div class="class-description">THIS IS Description</div>
-        </div>
-      </div> -->
 
       <dialog class="record-modal">
         <div class="record-wrap">
@@ -159,7 +180,7 @@
           <div class="record-visible">
             <div class="record-title">Physics</div>
             <div class="record-icons">
-              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <!-- <i class="fa-regular fa-pen-to-square edit-btn"></i> -->
               <i class="fa-regular fa-trash-can delete-btn"></i>
               <span class="separator">|</span>
               <i class="fa-solid fa-chevron-down dropdown-btn"></i>
@@ -184,7 +205,7 @@
           <div class="record-visible">
             <div class="record-title">Algorithms and Neural Networks</div>
             <div class="record-icons">
-              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <!-- <i class="fa-regular fa-pen-to-square edit-btn"></i> -->
               <i class="fa-regular fa-trash-can delete-btn"></i>
               <span class="separator">|</span>
               <i class="fa-solid fa-chevron-down dropdown-btn"></i>
@@ -209,7 +230,7 @@
           <div class="record-visible">
             <div class="record-title">Simulation and Modelling</div>
             <div class="record-icons">
-              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <!-- <i class="fa-regular fa-pen-to-square edit-btn"></i> -->
               <i class="fa-regular fa-trash-can delete-btn"></i>
               <span class="separator">|</span>
               <i class="fa-solid fa-chevron-down dropdown-btn"></i>
@@ -234,7 +255,7 @@
           <div class="record-visible">
             <div class="record-title">Social Science and Politics</div>
             <div class="record-icons">
-              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <!-- <i class="fa-regular fa-pen-to-square edit-btn"></i> -->
               <i class="fa-regular fa-trash-can delete-btn"></i>
               <span class="separator">|</span>
               <i class="fa-solid fa-chevron-down dropdown-btn"></i>
@@ -259,7 +280,7 @@
           <div class="record-visible">
             <div class="record-title">Machine Learning and Data Science</div>
             <div class="record-icons">
-              <i class="fa-regular fa-pen-to-square edit-btn"></i>
+              <!-- <i class="fa-regular fa-pen-to-square edit-btn"></i> -->
               <i class="fa-regular fa-trash-can delete-btn"></i>
               <span class="separator">|</span>
               <i class="fa-solid fa-chevron-down dropdown-btn"></i>
@@ -284,6 +305,5 @@
     </div>
 
     <script src="/backend/audio.js"></script>
-    <script src="dashboard.js" defer></script>
   </body>
 </html>

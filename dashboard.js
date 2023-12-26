@@ -85,3 +85,19 @@ profileBtn.addEventListener("click", () => {
 closeProfileModal.addEventListener("click", () => {
   profileModal.close();
 });
+
+//Intersection observer
+const cardsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal-cards");
+    } else {
+      entry.target.classList.remove("reveal-cards");
+    }
+  });
+});
+
+const hiddenCards = document.querySelectorAll(".class");
+hiddenCards.forEach((elem) => {
+  cardsObserver.observe(elem);
+});

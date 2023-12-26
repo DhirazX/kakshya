@@ -54,15 +54,18 @@ body {
 }
 .hero-btns {
   display: flex;
-  justify-content: start;
   align-items: center;
+  justify-content: start;
+  margin: 40px 0;
 }
 .create-btn,
 .add-btn {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   color: var(--theme-color);
   border: 5px solid var(--theme-color);
   padding: 40px 50px;
+  /* padding: 2% 4%; */
+  height: 100%;
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -89,6 +92,66 @@ body {
 .add-icon {
   font-weight: 600;
   font-size: 50px;
+}
+.create-class {
+  padding: 2%;
+  background-color: var(--light-bg);
+  border-radius: 5px;
+  width: 100%;
+  margin: 30px 0;
+}
+.create-class-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+.create-class-subtitle {
+  color: var(--theme-color);
+  margin-right: 15px;
+  font-size: 18px;
+}
+.create-class-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.create-class-description-wrapper {
+  margin-top: 20px;
+  display: flex;
+}
+.create-class-description-wrapper-second {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.create-class-btn {
+  background: none;
+  border: 2px solid var(--theme-color);
+  padding: 10px 15px;
+  color: var(--main-text-color);
+  border-radius: 3px;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: 0.3s all;
+}
+.create-class-btn:hover {
+  background-color: var(--theme-color);
+  color: var(--main-bg);
+  transform: scale(0.93);
+}
+.text-input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  width: 100%;
+  color: var(--main-text-color);
+  outline: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.text-input-textarea {
+  width: 100%;
+  resize: none;
+  /* height: 50px; */
 }
 
 /* modal */
@@ -144,6 +207,9 @@ body {
   color: var(--main-text-color);
   padding: 8%;
   text-align: center;
+}
+.profile-modal[open] {
+  animation: fadein 0.2s ease-out forwards;
 }
 .user-icon {
   color: var(--theme-color);
@@ -400,6 +466,14 @@ body {
   font-size: 30px;
 }
 
+@media only screen and (max-width: 800px) {
+  .class-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .create-class {
+    padding: 3%;
+  }
+}
 @media only screen and (max-width: 600px) {
   .create-btn,
   .add-btn {
@@ -434,7 +508,8 @@ body {
   .add-icon {
     font-size: 40px;
   }
-  .section-title {
+  .section-title,
+  .create-class-title {
     font-size: 18px;
   }
   .delete-text {
@@ -451,7 +526,26 @@ body {
   .close-modal {
     font-size: 18px;
   }
+  .class-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .class-title {
+    font-size: 18px;
+  }
+  .class-description {
+    font-size: 14px;
+  }
+  .text-input {
+    font-size: 14px;
+  }
+  .create-class-subtitle {
+    font-size: 16px;
+  }
+  .create-class-btn {
+    padding: 5px 10px;
+  }
 }
+
 @media only screen and (max-width: 450px) {
   .create-btn,
   .add-btn {
