@@ -139,27 +139,13 @@ function updateClassesList(data) {
     return;
   }
 
-  let htmlContent = '<div class="recordings">';
-
+  let htmlContent = '<div class="class-wrapper">';
   data.forEach((classItem) => {
-    htmlContent += `
-            <div class="record">
-                <div class="record-visible">
-                    <div class="record-title">${classItem.title}</div>
-                    <div class="record-icons">
-                        <i class="fa-regular fa-pen-to-square edit-btn"></i>
-                        <i class="fa-regular fa-trash-can delete-btn"></i>
-                        <span class="separator">|</span>
-                        <i class="fa-solid fa-chevron-down dropdown-btn"></i>
-                    </div>
-                </div>
-                <div class="record-info hide-record-info">
-                    ${classItem.description}
-                    <br /><br />
-                    Created at: ${classItem.created_at}
-                </div>
-            </div>
-        `;
+    htmlContent += `<div class="class">
+                          <div class="class-title">${classItem.title}</div>
+                          <div class="class-description">${classItem.description}</div>
+                          <div class="class-date">Created at: ${classItem.created_at}</div>
+                      </div>`;
   });
 
   htmlContent += "</div>";
