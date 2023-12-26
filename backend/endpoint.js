@@ -72,6 +72,7 @@ function uploadFile(event) {
   const title = document.getElementById("upload-popup").value;
   const classId = document.querySelector(".class-select").value;
   const fileInput = document.querySelector(".upload-section");
+  const uploadBtn = document.querySelector(".upload-btn");
   const audioFile = fileInput.files[0];
 
   const formData = new FormData();
@@ -80,6 +81,8 @@ function uploadFile(event) {
   formData.append("audio_file", audioFile);
 
   console.log("Uploading file with data:", title, classId, audioFile);
+  uploadBtn.innerHTML = "Uploading ..";
+  uploadBtn.disabled = "true";
 
   fetch(url, {
     method: "POST",
@@ -92,7 +95,9 @@ function uploadFile(event) {
     .then((data) => {
       if (data.message === "Class record created successfully") {
         // Handle successful upload
-        alert("Success");
+        // alert("Success");
+        uploadBtn.innerHTML = "Uploaded";
+
         location.reload();
       } else {
         console.log("error");
@@ -235,6 +240,38 @@ function updateClassSelectOptionsRecord(data) {
   });
 }
 
+function getSummaryName(id) {
+  const url = base_url + API_ENDPOINTS.viewClassList;
+  const authToken = token;
+
+  // Return a new Promise
+  return new Promise((resolve, reject) => {
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + authToken,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Find the class with the given id
+        const classItem = data.find((item) => item.id === id);
+
+        if (classItem) {
+          // If the class is found, resolve the Promise with its title
+          resolve(classItem.title);
+        } else {
+          reject("Class not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        reject(error);
+      });
+  });
+}
+
 function updateSummaryList(data) {
   console.log("This is the summary list :", data);
 
@@ -247,22 +284,33 @@ function updateSummaryList(data) {
   }
 
   let htmlContent = '<div class="recordings">';
-
   data.forEach((classItem) => {
+    let recordClassName;
     let my_date = classItem.created_at;
     let date = new Date(my_date);
     let formattedDate = date.toISOString().split("T")[0];
     console.log("The updated date is = " + formattedDate);
 
+    getSummaryName(classItem.class_id)
+      .then((className) => {
+        recordClassName = className;
+        console.log("The classname is = " + className);
+      })
+      .catch((error) => {
+        console.log("Error getting class name:", error);
+      });
+
     htmlContent += `
-            <div class="record">
-                <div class="record-title" style="color: white;">${classItem.title}</div>
-                <div class="record-description" style="color: white;">Description = ${classItem.summary}  </div>
-                <div class="record-timestamp" style="color: white;"> Created at: ${formattedDate}</div>
-            </div>
-        `;
+    <div class="record">
+    <div class="record-visible">
+      <div class="record-title">${classItem.title}</div>
+    </div>
+    <div class="record-info">
+    ${classItem.summary} 
+    </div>
+  </div>`;
   });
 
-  htmlContent += "</div>";
+  // htmlContent += "</div>";
   classesContainer.innerHTML = htmlContent;
 }

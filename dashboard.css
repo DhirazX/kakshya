@@ -396,8 +396,9 @@ body {
 }
 .record-title {
   flex: 1;
-  font-size: 18px;
+  font-size: 20px;
   transition: 0.2s all;
+  color: var(--theme-color);
 }
 .delete-btn {
   color: red;
@@ -471,9 +472,9 @@ body {
   transition: 0.3s all;
 }
 .record-info {
-  margin-top: 0;
+  margin-top: 10px;
   transition: 0.5s all;
-  height: 0;
+  /* height: 0; */
   overflow: hidden;
   /* display: none; */
   /* animation: fade-in 1s; */
@@ -499,6 +500,16 @@ body {
   font-size: 30px;
 }
 
+.hiddenbtn {
+  display: none;
+}
+@media only screen and (max-width: 1100px) {
+  .select-class-dropdown {
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 800px) {
   .class-wrapper {
     grid-template-columns: repeat(1, 1fr);
@@ -597,11 +608,7 @@ body {
   .upload-modal {
     padding: 5% 10%;
   }
-  .select-class-dropdown {
-    font-size: 14px;
-    margin-top: 15px;
-    width: 100%;
-  }
+
   .upload-section {
     padding: 2px;
     font-size: 14px;

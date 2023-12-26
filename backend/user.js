@@ -29,7 +29,7 @@ function registeruser(event) {
 
   var formData = new FormData(event.target);
 
-  fetch("http://192.168.1.174:8000/api/user/register/", {
+  fetch("http://127.0.0.1:8000/api/user/register/", {
     method: "POST",
     body: formData,
   })
