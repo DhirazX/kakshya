@@ -167,10 +167,16 @@ function updateClassesList(data) {
 
   let htmlContent = '<div class="class-wrapper">';
   data.forEach((classItem) => {
+
+    let my_date = classItem.created_at;
+let date = new Date(my_date);
+let formattedDate = date.toISOString().split('T')[0];
+console.log("The updated date is = "+formattedDate);
+
     htmlContent += `<div class="class">
                           <div class="class-title">${classItem.title}</div>
                           <div class="class-description">${classItem.description}</div>
-                          <div class="class-date">Created at: ${classItem.created_at}</div>
+                          <div class="class-date">Created at: ${formattedDate}</div>
                       </div>`;
   });
 
@@ -245,12 +251,17 @@ function updateSummaryList(data) {
 
   let htmlContent = '<div class="recordings">';
 
+let my_date = classItem.created_at;
+let date = new Date(my_date);
+let formattedDate = date.toISOString().split('T')[0];
+console.log("The updated date is = "+formattedDate)
+
   data.forEach((classItem) => {
     htmlContent += `
             <div class="record">
                 <div class="record-title" style="color: white;">${classItem.title}</div>
                 <div class="record-description" style="color: white;">Description = ${classItem.description}  </div>
-                <div class="record-timestamp" style="color: white;"> Created at: ${classItem.created_at}</div>
+                <div class="record-timestamp" style="color: white;"> Created at: ${formattedDate}</div>
             </div>
         `;
   });
