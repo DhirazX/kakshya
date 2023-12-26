@@ -9,13 +9,25 @@
       src="https://kit.fontawesome.com/9a855d4630.js"
       crossorigin="anonymous"
     ></script>
-    <script src="dashboard.js" defer></script>
+    <script src="/backend/user.js"></script>
+    <script src="/backend/endpoint.js"></script>
+
+    <script>
+      window.onload = function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          window.location.href = "login.html";
+        }
+      };
+    </script>
     <title>Kakshya</title>
   </head>
   <body>
     <div class="container">
       <div class="nav">
         <div class="icon">Kakshya</div>
+        <button onClick="logoutUser(event)">Logout</button>
+
         <div class="profile-section"></div>
       </div>
 
@@ -29,6 +41,49 @@
           <span class="add-text">Upload</span>
         </div>
       </div>
+
+      <div class="">
+        <br /><br />
+        <h2>Create a Class</h2>
+        <br /><br />
+
+        <form id="createClassForm">
+          <div class="">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <br /><br />
+
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+      <br /><br />
+
+      <h1>List of classes =</h1>
+      <br />
+      <br />
+
+      <div id="classesList">
+        <!-- Classes list will be populated here by the JavaScript -->
+      </div>
+
+      <br />
+      <br />
+
       <!-- Record Modal -->
       <dialog class="record-modal">
         <div class="recorder-wrap">
@@ -39,11 +94,26 @@
 
       <!-- Upload Modal -->
       <dialog class="upload-modal">
-        <input type="file" class="upload-section" />
-        <div class="upload-btns-wrapper">
-          <button class="upload-cancel">Cancel</button>
-          <button class="upload-btn">Upload</button>
-        </div>
+        <form id="uploadForm" onSubmit="uploadFile(event)">
+          <br />
+          <input
+            type="text"
+            class="upload-title"
+            placeholder="Title"
+            name="title"
+          /><br /><br />
+          <select name="class" class="class-select">
+            <option value="">Select class :</option>
+          </select>
+
+          <br /><br />
+          <input type="file" class="upload-section" name="file" />
+
+          <div class="upload-btns-wrapper">
+            <button type="button" class="upload-cancel">Cancel</button>
+            <button type="submit" class="upload-btn">Upload</button>
+          </div>
+        </form>
       </dialog>
       <!-- Delete Modal -->
       <dialog class="delete-modal">
@@ -55,6 +125,9 @@
       </dialog>
 
       <div class="section-title">Recordings</div>
+
+      <p id="recoridng_list"></p>
+
       <div class="recordings">
         <div class="record hide-section">
           <div class="record-visible">
@@ -183,5 +256,8 @@
         </div>
       </div>
     </div>
+
+    <script src="/backend/audio.js"></script>
+    <script src="dashboard.js" defer></script>
   </body>
 </html>

@@ -12,6 +12,16 @@
       rel="stylesheet"
     />
     <script src="login.js" defer></script>
+    <script src="/backend/endpoint.js"></script>
+    <script src="/backend/user.js"></script>
+    <script>
+      window.onload = function () {
+        const token = localStorage.getItem("token");
+        if (token) {
+          window.location.href = "dashboard.html";
+        }
+      };
+    </script>
     <title>Kakshya</title>
   </head>
   <body>
@@ -25,13 +35,20 @@
       <div class="login-section hide-section">
         <div class="login-wrap">
           <div class="login-text">Login</div>
+          <label id="response"></label>
 
           <div class="form-wrapper">
-            <form method="POST" action="l#">
+            <form method="POST" onSubmit="loginuser(event)">
               <div class="input-wrapper">
-                <input type="text" placeholder="Username" class="input-field" />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="email"
+                  class="input-field"
+                />
                 <input
                   type="password"
+                  name="password"
                   placeholder="Password"
                   class="input-field"
                 />
