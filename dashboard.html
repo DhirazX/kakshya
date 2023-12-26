@@ -84,10 +84,27 @@
       <br />
       <br />
 
-      <!-- Record Modal -->
       <dialog class="record-modal">
-        <div class="recorder-wrap">
-          <button class="record-btn" type="button">Start</button>
+        <div class="record-wrap">
+          <div class="recorder-title">Record Audio</div>
+          <input
+            type="text"
+            class="upload-title"
+            placeholder="Title"
+            name="title"
+          /><br /><br />
+
+          <select name="class" class="class-select-record">
+            <option value="">Select class :</option>
+          </select>
+
+          <button class="record-btn" id="recordButton" type="button">
+            Start
+          </button>
+          <br /><br /><br />
+          <div id="timer">00:00</div>
+          <br /><br />
+          <button id="saveButton">Save</button>
         </div>
         <i class="fa-solid fa-xmark close-modal"></i>
       </dialog>
@@ -105,7 +122,6 @@
           <select name="class" class="class-select">
             <option value="">Select class :</option>
           </select>
-
           <br /><br />
           <input type="file" class="upload-section" name="file" />
 

@@ -119,6 +119,7 @@ function fetchClasses() {
     .then(data => {
         console.log(data);
         updateClassSelectOptions(data);
+        updateClassSelectOptionsRecord(data);
         updateClassesList(data);
     })
     .catch(error => {
@@ -193,8 +194,11 @@ function updateClassSelectOptions(data) {
     console.log(data);
     console.log('Updating class select options with data:', data);
     const selectElement = document.querySelector('.class-select');
-    selectElement.innerHTML = '<option value="">Select class</option>'; // Clear existing options
 
+    const selectElementRecord = document.querySelector('.class-select-record');
+
+    selectElement.innerHTML = '<option value="">Select class</option>'; // Clear existing options
+    
     data.forEach(classItem => {
         const optionElement = document.createElement('option');
         optionElement.value = classItem.id; // Replace 'classId' with the correct property name
@@ -202,6 +206,24 @@ function updateClassSelectOptions(data) {
         selectElement.appendChild(optionElement);
     });
 }
+
+function updateClassSelectOptionsRecord(data) {
+    console.log(data);
+    console.log('Updating class select options with data:', data);
+    const selectElement = document.querySelector('.class-select-record');
+
+    selectElement.innerHTML = '<option value="">Select class</option>'; // Clear existing options
+    
+    data.forEach(classItem => {
+        const optionElement = document.createElement('option');
+        optionElement.value = classItem.id; // Replace 'classId' with the correct property name
+        optionElement.textContent = classItem.title;
+        selectElement.appendChild(optionElement);
+    });
+}
+
+
+
 
 function updateSummaryList(data) {
     console.log('Updating classes list with data:', data);
