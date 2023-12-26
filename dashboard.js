@@ -73,3 +73,15 @@ dropdownBtn.forEach((btn, index) => {
     recordTitle[index].classList.toggle("bigger-font");
   });
 });
+
+//Profile Modal
+const profileBtn = document.querySelector(".profile-section");
+const closeProfileModal = document.querySelector(".close-profile-modal");
+const profileModal = document.querySelector(".profile-modal");
+
+profileBtn.addEventListener("click", () => {
+  profileModal.showModal();
+});
+closeProfileModal.addEventListener("click", () => {
+  profileModal.close();
+});

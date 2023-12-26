@@ -133,13 +133,65 @@ body {
   align-items: center;
   justify-content: end;
 }
-
+.profile-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
+  padding: 8%;
+  text-align: center;
+}
+.user-icon {
+  color: var(--theme-color);
+  font-size: 70px;
+}
+.username {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.user-email {
+  /* margin-top: 5px; */
+  font-size: 18px;
+}
+.logout-btn {
+  margin-top: 20px;
+  background: none;
+  border: 2px solid var(--theme-color);
+  border-radius: 3px;
+  color: var(--main-text-color);
+  padding: 8px 15px;
+  outline: none;
+  font-weight: 600;
+  transition: 0.2s all;
+}
+.logout-btn:hover {
+  background-color: var(--theme-color);
+  color: var(--main-bg);
+  transform: scale(0.96);
+}
+.close-profile-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5%;
+  font-size: 35px;
+  color: grey;
+  transition: 0.3s all;
+}
+.close-profile-modal:hover {
+  transform: scale(0.85);
+}
 .upload-btn {
   background-color: rgb(2, 210, 2);
 }
 .record-modal::backdrop,
 .delete-modal::backdrop,
-.upload-modal::backdrop {
+.upload-modal::backdrop,
+.profile-modal::backdrop {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .record-modal[open] {
@@ -194,6 +246,7 @@ body {
   font-size: 40px;
   padding: 20px;
   transition: 0.3s all;
+  color: grey;
 }
 .close-modal:hover {
   transform: scale(0.85);
@@ -371,11 +424,10 @@ body {
     width: 60px;
     font-size: 14px;
   }
-  .record-modal{
+  .record-modal {
     padding: 20% 20%;
-
   }
-  .close-modal{
+  .close-modal {
     font-size: 18px;
   }
 }

@@ -26,10 +26,18 @@
     <div class="container">
       <div class="nav">
         <div class="icon">Kakshya</div>
-        <button onClick="logoutUser(event)">Logout</button>
 
         <div class="profile-section"></div>
       </div>
+
+      <!-- Profile Dialog -->
+      <dialog class="profile-modal">
+        <i class="fa-regular fa-user user-icon"></i>
+        <div class="username">Hi, User</div>
+        <div class="user-email">user@gmail.com</div>
+        <button onClick="logoutUser(event)" class="logout-btn">Logout</button>
+        <i class="fa-solid fa-xmark close-profile-modal"></i>
+      </dialog>
 
       <div class="hero-btns">
         <div class="create-btn">
@@ -118,6 +126,7 @@
             class="upload-title"
             placeholder="Title"
             name="title"
+            id="upload-popup"
           /><br /><br />
           <select name="class" class="class-select">
             <option value="">Select class :</option>
