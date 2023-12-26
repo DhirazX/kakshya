@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const recordButton = document.getElementById("recordButton");
   const saveButton = document.getElementById("saveButton");
   const timerDisplay = document.getElementById("timer");
   const uploadButton = document.getElementById("uploadButton"); // Add this button in your HTML
   const titleInput = document.getElementById("rec-title");
-  const classSelect = document.getElementById("rec-id"); // Ensure this is an ID, not a class
+  const classSelect = document.getElementById("class-select-record"); // Ensure this is an ID, not a class
 
   let mediaRecorder;
   let audioChunks = [];
@@ -51,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Record Button Event Listener
 
   recordButton.addEventListener("click", () => {
+
+    console.log("Entered inside the record button");
     if (isRecording) {
       mediaRecorder.stop();
     } else {
@@ -70,14 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   saveButton.addEventListener("click", () => {
     if (audioBlob) {
-      console.log(
-        "entered into upload button",
-        titleInput.value,
-        classSelect.value,
-        audioFile
-      );
-
+        console.log("The title is = "+titleInput.value + classSelect.value +" the audio blob uis - "+ audioBlob );
+    
       uploadAudio(titleInput.value, classSelect.value, audioBlob);
+      console.log("After the uploadAudio");
     } else {
       alert("No recording to save!");
     }
@@ -102,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("title", title);
     formData.append("class_id", classId);
     formData.append("audio_file", audio);
+
+    console.log("the form data is = "+formData);
 
     fetch(url, {
       method: "POST",

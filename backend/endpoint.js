@@ -198,7 +198,7 @@ function fetchSummary() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      console.log("The summary is = "+data);
       updateSummaryList(data);
     })
     .catch((error) => {
@@ -232,6 +232,9 @@ function updateClassSelectOptionsRecord(data) {
 
   data.forEach((classItem) => {
     const optionElement = document.createElement("option");
+    // const idElement = document.createElement("id");
+    // idElement.value = ""
+    
     optionElement.value = classItem.id; // Replace 'classId' with the correct property name
     optionElement.textContent = classItem.title;
     selectElement.appendChild(optionElement);
@@ -239,7 +242,7 @@ function updateClassSelectOptionsRecord(data) {
 }
 
 function updateSummaryList(data) {
-  console.log("Updating classes list with data:", data);
+  console.log("This is the summary list :", data);
 
   const classesContainer = document.getElementById("recordingList");
 
@@ -251,16 +254,16 @@ function updateSummaryList(data) {
 
   let htmlContent = '<div class="recordings">';
 
-let my_date = classItem.created_at;
-let date = new Date(my_date);
-let formattedDate = date.toISOString().split('T')[0];
-console.log("The updated date is = "+formattedDate)
-
   data.forEach((classItem) => {
+    let my_date = classItem.created_at;
+    let date = new Date(my_date);
+    let formattedDate = date.toISOString().split('T')[0];
+    console.log("The updated date is = "+formattedDate)
+
     htmlContent += `
             <div class="record">
                 <div class="record-title" style="color: white;">${classItem.title}</div>
-                <div class="record-description" style="color: white;">Description = ${classItem.description}  </div>
+                <div class="record-description" style="color: white;">Description = ${classItem.summary}  </div>
                 <div class="record-timestamp" style="color: white;"> Created at: ${formattedDate}</div>
             </div>
         `;

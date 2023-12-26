@@ -98,12 +98,17 @@
           <div class="recorder-title">Record Audio</div>
           <input
             type="text"
+            id="rec-title"
             class="upload-title"
             placeholder="Title"
             name="title"
           /><br /><br />
 
-          <select name="class" class="class-select-record">
+          <select
+            name="class"
+            id="class-select-record"
+            class="class-select-record"
+          >
             <option value="">Select class :</option>
           </select>
 
@@ -152,7 +157,7 @@
 
       <div class="section-title">Recordings</div>
 
-      <p id="recoridng_list"></p>
+      <p id="recordingList"></p>
 
       <div class="recordings">
         <div class="record hide-section">
