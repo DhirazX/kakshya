@@ -128,6 +128,32 @@ function fetchClasses() {
     });
 }
 
+getUserDetail();
+
+function getUserDetail(){
+    const url = base_url + API_ENDPOINTS.profile;
+  const authToken = token;
+
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + authToken,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Response of the user profile is = ",data);
+      document.getElementById("username_field").innerText=data.name;
+      document.getElementById("email_field").innerText=data.email;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+
+}
+
+
 function updateClassesList(data) {
   console.log("Updating classes list with data:", data);
 
