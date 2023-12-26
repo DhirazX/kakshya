@@ -28,14 +28,14 @@
       <div class="nav">
         <div class="icon">Kakshya</div>
 
-        <div class="profile-section"></div>
+        <i class="fa-solid fa-user profile-section"></i>
       </div>
 
-      <!-- Profile Dialog -->
+      <!-- Profile Modal -->
       <dialog class="profile-modal">
         <i class="fa-regular fa-user user-icon"></i>
-        <div class="username" id="username_field">Hi, User</div>
-        <div class="user-email" id="email_field">user@gmail.com</div>
+        <div class="username" id="username_field"></div>
+        <div class="user-email" id="email_field"></div>
         <button onClick="logoutUser(event)" class="logout-btn">Logout</button>
         <i class="fa-solid fa-xmark close-profile-modal"></i>
       </dialog>
@@ -50,32 +50,6 @@
           <span class="add-text">Upload</span>
         </div>
       </div>
-
-      <!-- <div class="">
-        <h2>Create a Class</h2>
-        <form id="createClassForm">
-          <div class="">
-            <label for="title">Title</label>
-            <input
-              type="text"
-              class="form-control"
-              id="title"
-              placeholder="Enter title"
-            />
-          </div>
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea
-              class="form-control"
-              id="description"
-              rows="3"
-              placeholder="Enter description"
-            ></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Create</button>
-        </form>
-      </div> -->
 
       <div class="create-class">
         <div class="create-class-title">Create a Class</div>
@@ -142,18 +116,16 @@
       <!-- Upload Modal -->
       <dialog class="upload-modal">
         <form id="uploadForm" onSubmit="uploadFile(event)">
-          <br />
           <input
             type="text"
             class="upload-title"
-            placeholder="Title"
+            placeholder="Enter Title"
             name="title"
             id="upload-popup"
-          /><br /><br />
-          <select name="class" class="class-select">
+          />
+          <select name="class" class="class-select select-class-dropdown">
             <option value="">Select class :</option>
           </select>
-          <br /><br />
           <input type="file" class="upload-section" name="file" />
 
           <div class="upload-btns-wrapper">
@@ -173,8 +145,7 @@
 
       <div class="section-title">Recordings</div>
 
-      <p id="recoridng_list"></p>
-
+      <p id="recordingList"></p>
       <div class="recordings">
         <div class="record hide-section">
           <div class="record-visible">

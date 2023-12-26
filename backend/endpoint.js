@@ -130,8 +130,8 @@ function fetchClasses() {
 
 getUserDetail();
 
-function getUserDetail(){
-    const url = base_url + API_ENDPOINTS.profile;
+function getUserDetail() {
+  const url = base_url + API_ENDPOINTS.profile;
   const authToken = token;
 
   fetch(url, {
@@ -143,16 +143,14 @@ function getUserDetail(){
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Response of the user profile is = ",data);
-      document.getElementById("username_field").innerText=data.name;
-      document.getElementById("email_field").innerText=data.email;
+      console.log("Response of the user profile is = ", data);
+      document.getElementById("username_field").innerText = `Hi, ${data.name}`;
+      document.getElementById("email_field").innerText = data.email;
     })
     .catch((error) => {
       console.error("Error:", error);
     });
-
 }
-
 
 function updateClassesList(data) {
   console.log("Updating classes list with data:", data);
@@ -167,11 +165,10 @@ function updateClassesList(data) {
 
   let htmlContent = '<div class="class-wrapper">';
   data.forEach((classItem) => {
-
     let my_date = classItem.created_at;
-let date = new Date(my_date);
-let formattedDate = date.toISOString().split('T')[0];
-console.log("The updated date is = "+formattedDate);
+    let date = new Date(my_date);
+    let formattedDate = date.toISOString().split("T")[0];
+    console.log("The updated date is = " + formattedDate);
 
     htmlContent += `<div class="class">
                           <div class="class-title">${classItem.title}</div>
@@ -239,7 +236,7 @@ function updateClassSelectOptionsRecord(data) {
 }
 
 function updateSummaryList(data) {
-  console.log("Updating classes list with data:", data);
+  console.log("This is the summary list :", data);
 
   const classesContainer = document.getElementById("recordingList");
 
@@ -251,16 +248,16 @@ function updateSummaryList(data) {
 
   let htmlContent = '<div class="recordings">';
 
-let my_date = classItem.created_at;
-let date = new Date(my_date);
-let formattedDate = date.toISOString().split('T')[0];
-console.log("The updated date is = "+formattedDate)
-
   data.forEach((classItem) => {
+    let my_date = classItem.created_at;
+    let date = new Date(my_date);
+    let formattedDate = date.toISOString().split("T")[0];
+    console.log("The updated date is = " + formattedDate);
+
     htmlContent += `
             <div class="record">
                 <div class="record-title" style="color: white;">${classItem.title}</div>
-                <div class="record-description" style="color: white;">Description = ${classItem.description}  </div>
+                <div class="record-description" style="color: white;">Description = ${classItem.summary}  </div>
                 <div class="record-timestamp" style="color: white;"> Created at: ${formattedDate}</div>
             </div>
         `;
